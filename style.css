@@ -179,7 +179,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 120px 0 80px;
+  padding: 120px 0 160px;
   overflow: hidden;
   text-align: center;
 }
@@ -553,31 +553,17 @@ body {
 .footer-brand {
   display: flex;
   align-items: center;
-  gap: 12px;
 }
 
 .footer-logo {
-  width: 40px;
-  height: 40px;
-  border-radius: 9px;
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
   object-fit: cover;
+  opacity: 0.85;
+  transition: opacity var(--transition);
 }
-
-.footer-name {
-  font-family: var(--font-head);
-  font-size: 0.95rem;
-  font-weight: 700;
-  color: #fff;
-}
-
-.footer-strapline {
-  font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--text-dim);
-  margin-top: 2px;
-}
+.footer-logo:hover { opacity: 1; }
 
 .footer-copy {
   font-size: 0.78rem;
