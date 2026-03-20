@@ -1,0 +1,22 @@
+Logo assessment for dark background carousel:
+
+- hsbc.png: White text on transparent bg - GOOD for dark bg, needs CSS filter:invert(0) - actually it's white already
+- barclays.png: Transparent bg, blue logo - GOOD, will show on dark
+- bp.png: Colored logo (green/yellow) on transparent - GOOD
+- walmart.png: Has background (green/white) - needs mix-blend-mode or CSS treatment
+- aldi.png: Has background - needs treatment
+- microsoft.png: White text on transparent - GOOD for dark bg
+- ms.png: Has background - needs treatment
+- mitchell_butlers.png: White bg, grey/colored logo - needs treatment
+- severn_trent.png: White bg, colored logo - needs treatment
+- virgin.png: Red logo on transparent - GOOD
+- vodafone.png: White logo on dark bg (has checker pattern = transparent) - GOOD
+
+Strategy: Use CSS filter: brightness(0) invert(1) on logos with white/light backgrounds
+to convert them to white silhouettes for consistent dark-theme appearance.
+Or use mix-blend-mode: screen to blend out white backgrounds.
+Best approach: use mix-blend-mode: luminosity + brightness filter on all logos,
+and apply a uniform white/light treatment via CSS filter.
+
+Will use: filter: brightness(0) invert(1) on all logos for consistent white appearance,
+with opacity 0.7 to keep them subtle. This works well for a "trusted by" section.
