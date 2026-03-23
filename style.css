@@ -346,14 +346,7 @@ body {
   line-height: 1.65;
 }
 
-/* ─── EXPERIENCE STRIP ───────────────────────────────────────── */
-.exp-section {
-  padding: 40px 0;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  background: rgba(255,255,255,0.015);
-}
-
+/* ─── EXPERIENCE ────────────────────────────────────────────── */
 .exp-label {
   font-size: 0.7rem;
   font-weight: 700;
@@ -534,6 +527,16 @@ body {
 }
 .form-success svg { width: 18px; height: 18px; flex-shrink: 0; }
 .form-success.visible { display: flex; }
+
+.contact-email {
+  color: var(--accent-1);
+  text-decoration: none;
+  transition: var(--transition);
+}
+.contact-email:hover {
+  color: var(--accent-2);
+  text-decoration: underline;
+}
 
 /* ─── FOOTER ─────────────────────────────────────────────────── */
 .footer {
