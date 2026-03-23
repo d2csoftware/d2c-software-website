@@ -35,7 +35,7 @@ async function handleSubmit(e) {
   if (error) error.classList.remove('visible');
 
   try {
-    const response = await fetch('https://formspree.io/f/xpwzgpwz', {
+    const response = await fetch('https://formspree.io/f/xpqygnpq', {
       method:  'POST',
       headers: { 'Accept': 'application/json' },
       body:    new FormData(form)
