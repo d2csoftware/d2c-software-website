@@ -23,15 +23,38 @@ const observer = new IntersectionObserver((entries) => {
 fadeEls.forEach(el => observer.observe(el));
 
 /* ─── CONTACT FORM ───────────────────────────────────────────── */
-function handleSubmit(e) {
+async function handleSubmit(e) {
   e.preventDefault();
-  const btn = e.target.querySelector('button[type="submit"]');
+  const form    = e.target;
+  const btn     = form.querySelector('button[type="submit"]');
   const success = document.getElementById('formSuccess');
-  btn.textContent = 'Sending...';
+  const error   = document.getElementById('formError');
+
+  btn.textContent = 'Sending\u2026';
   btn.disabled = true;
-  setTimeout(() => {
-    e.target.reset();
-    btn.style.display = 'none';
-    success.classList.add('visible');
-  }, 1200);
+  if (error) error.classList.remove('visible');
+
+  try {
+    const response = await fetch('https://formspree.io/f/xpwzgpwz', {
+      method:  'POST',
+      headers: { 'Accept': 'application/json' },
+      body:    new FormData(form)
+    });
+
+    if (response.ok) {
+      form.reset();
+      btn.style.display = 'none';
+      success.classList.add('visible');
+    } else {
+      const data = await response.json();
+      throw new Error(data.errors ? data.errors.map(err => err.message).join(', ') : 'Submission failed');
+    }
+  } catch (err) {
+    btn.textContent = 'Send Message \u2192';
+    btn.disabled = false;
+    if (error) {
+      error.textContent = 'Sorry, something went wrong. Please email us directly at hello@d2csoftware.com';
+      error.classList.add('visible');
+    }
+  }
 }

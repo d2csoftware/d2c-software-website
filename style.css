@@ -535,6 +535,18 @@ body {
 .form-success svg { width: 18px; height: 18px; flex-shrink: 0; }
 .form-success.visible { display: flex; }
 
+.form-error {
+  display: none;
+  padding: 14px 18px;
+  background: rgba(255,107,107,0.08);
+  border: 1px solid rgba(255,107,107,0.25);
+  border-radius: 8px;
+  color: var(--accent-1);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+.form-error.visible { display: block; }
+
 /* ─── FOOTER ─────────────────────────────────────────────────── */
 .footer {
   background: var(--bg-dark);
