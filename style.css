@@ -394,74 +394,6 @@ body {
   margin-bottom: 48px;
 }
 
-.carousel-outer {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-}
-
-.carousel-fade-left,
-.carousel-fade-right {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 120px;
-  z-index: 2;
-  pointer-events: none;
-}
-
-.carousel-fade-left {
-  left: 0;
-  background: linear-gradient(to right, var(--bg), transparent);
-}
-
-.carousel-fade-right {
-  right: 0;
-  background: linear-gradient(to left, var(--bg), transparent);
-}
-
-.carousel-track {
-  display: flex;
-  align-items: center;
-  gap: 0;
-  width: max-content;
-  animation: carouselScroll 32s linear infinite;
-}
-
-.carousel-track:hover {
-  animation-play-state: paused;
-}
-
-@keyframes carouselScroll {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-.logo-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 48px;
-  height: 100px;
-  flex-shrink: 0;
-}
-
-.logo-item img {
-  max-height: 52px;
-  max-width: 160px;
-  width: auto;
-  object-fit: contain;
-  /* Convert all logos to white/light for dark background consistency */
-  filter: brightness(0) invert(1);
-  opacity: 0.55;
-  transition: opacity 0.3s ease, filter 0.3s ease;
-}
-
-.logo-item:hover img {
-  opacity: 1;
-  filter: brightness(0) invert(1) sepia(0.2);
-}
-
 /* ─── CONTACT ────────────────────────────────────────────────── */
 .contact-wrap {
   max-width: 640px;
@@ -620,7 +552,4 @@ body {
   .hero-cta { flex-direction: column; align-items: stretch; }
   .btn-lg { width: 100%; }
   .footer-inner { flex-direction: column; align-items: flex-start; }
-  .carousel-fade-left,
-  .carousel-fade-right { width: 60px; }
-  .logo-item { padding: 0 28px; }
 }
